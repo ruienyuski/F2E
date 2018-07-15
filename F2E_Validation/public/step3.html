@@ -1,0 +1,103 @@
+<!-- Doctype HTML5 -->
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <!--設置文檔的字符編碼-->
+    <meta charset="UTF-8">
+    <!--響應式網頁設計viewpoint聲明-->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Meta Description -->
+    <meta name=" description " content=" Description of the page less than 150 characters ">
+    <meta property=" og:type " content=" website ">
+    <meta property=" og:url " content=" https://example.com/page.html ">
+    <meta property=" og:title " content=" Content Title ">
+    <meta property=" og:image " content=" https://example.com/image.jpg ">
+    <meta property=" og:description " content=" Description Here ">
+    <meta property=" og:site_name " content=" Site Name ">
+    <meta property=" og:locale " content=" zh_tw ">
+    <!--文檔標題-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <title>validate</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class=" header_line"></div>
+        <div class="progress">
+            <div class="in done"></div>
+            <div class="in done"></div>
+            <div class="in"></div>
+            <div class=""></div>
+        </div>
+        <h2 class="text-center">Update Profile Picture</h2>
+        <h4 class="text-center">We wanna know you more!</h4>
+        <form action="/step3.html" method="POST" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label>
+                    <div class="upload">
+                      <i class="fas fa-images"></i>
+                      <div>
+                        UPLOAD UP TO 3 PHOTOS
+                        <br> MAX SIZE: 150*150px
+                      </div>
+                    </div>
+                    <input type="file" name="Photos" accept="image/*" multiple>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <button type="button" class="btn btn-warning form-control warn msg" value="">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row list">
+              <div class="col-4">
+                <div class="form-group img">
+                  <img>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group img">
+                  <img>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group img">
+                  <img>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-block form-control warn">SUBMIT & NEXT</button>
+                </div>
+              </div>
+            </div>
+          </form>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="js/ui-control.js"></script>
+    <script src="js/universal.js"></script>
+    <script src="js/validate-base.js"></script>
+    <script src="js/validate-upload.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+/*color*/
+/*font*/
+html, body {
+  font-family: 'Open Sans', sans-serif; }
+
+.relative {
+  position: relative; }
+
+ul li {
+  list-style: none; }
+
+.header_line {
+  width: 456px;
+  height: 3px;
+  margin: 0 auto;
+  background: #0275D8; }
+
+.container {
+  max-width: 460px;
+  width: 100%; }
+  .container h2 {
+    font-size: 48px; }
+  .container h4 {
+    font-size: 24px; }
+
+.progress {
+  margin: 64px auto;
+  width: 234px;
+  height: auto;
+  background: #FFFFFF;
+  border: 2px solid #BEE1FF; }
+
+.progress > div {
+  width: 16px;
+  height: 16px;
+  background: #FFFFFF;
+  border: 2px solid #BEE1FF;
+  border-radius: 16px;
+  position: absolute;
+  margin-top: -8px;
+  margin-left: -8px; }
+
+.progress > div:nth-child(2) {
+  margin-left: 70px; }
+
+.progress > div:nth-child(3) {
+  margin-left: 148px; }
+
+.progress > div:nth-child(4) {
+  margin-left: 226px; }
+
+.progress > .in {
+  border: 2px solid #0275D8; }
+
+.progress > .in:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #0275D8;
+  display: block;
+  border-radius: 8px;
+  margin-top: 2px;
+  margin-left: 2px; }
+
+.progress > .in:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 65px;
+  background: #FFFFFF;
+  border: 2px solid #0275D8;
+  margin-top: 4px;
+  margin-left: -65px; }
+
+.progress > .in:first-child:before {
+  display: none; }
+
+.progress > .in.done:after {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  content: "\f00c";
+  width: 16px;
+  height: 16px;
+  margin: -2px;
+  color: white;
+  text-align: center; }
+
+.account_form {
+  font-size: 20px; }
+  .account_form .form-control {
+    border: 2px solid #000;
+    border-radius: 8px; }
+
+.process li {
+  list-style: none; }
+
+input[type='file'] {
+  display: none; }
+
+.img_upload {
+  display: block;
+  padding: 46px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  color: #9B9B9B; }
+
+.label_blank {
+  margin-bottom: 30px; }
+
+.smile {
+  font-size: 230px;
+  color: #BEE1FF; }
+
+.smile_text {
+  color: #0275D8;
+  font-size: 20px;
+  font-style: italic; }
+
+/*form invalid*/
+.form-control {
+  color: #999999; }
+
+.warning {
+  padding: 14px 40px;
+  background-color: #F5A623;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 8px;
+  text-align: center; }
+
+.tooltip {
+  margin-left: 10px; }
+
+.tooltip .arrow:before {
+  border-right-color: #F5A623;
+  border-left-color: #F5A623; }
+
+.tooltip-inner {
+  background: #F5A623; }
+
+.form-control.warn {
+  border-color: #F5A623;
+  border-width: 2px; }
+
+.form-control.warn:after {
+  content: attr(value); }
+
+.form-control ~ i {
+  display: none;
+  position: absolute;
+  bottom: 12px;
+  right: 10px; }
+
+.form-control.warn ~ i {
+  display: block;
+  color: #F5A623; }
+
+.btn-block.form-control {
+  background-color: #0275D8;
+  border: 0;
+  color: #FFFFFF; }
+
+.btn-block.form-control.warn {
+  border-color: #BEE1FF;
+  opacity: 0.5; }
+
+.btn-warning.warn {
+  color: white;
+  background: #F5A623; }
+
+.msg[value=''] {
+  display: none; }
+
+.img {
+  position: relative;
+  cursor: pointer; }
+
+.img img {
+  width: 100%;
+  border-radius: 8px;
+  display: none; }
+
+.img img[src] {
+  width: 100%;
+  border-radius: 8px;
+  display: block; }
+
+.img:hover:after {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  content: '\f2ed';
+  height: 52px;
+  background: #0275D8;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  line-height: 52px; }
+
+.upload {
+  margin-top: 16px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  width: 460px;
+  height: 140px; }
+
+.upload > i {
+  width: 58px;
+  height: 45px;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 48px;
+  margin-left: 69px; }
+
+.upload > div {
+  width: 235px;
+  height: 48px;
+  margin-top: 48px;
+  margin-left: 20px;
+  display: inline-block; }
+
+.upload + input {
+  width: 460px;
+  height: 140px;
+  position: absolute;
+  top: 16px;
+  opacity: 0;
+  cursor: pointer; }
+
+.list {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+
+.visa,
+.master {
+  display: none;
+  font-size: 30px;
+  bottom: 4px !important; }

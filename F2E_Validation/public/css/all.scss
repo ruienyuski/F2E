@@ -1,0 +1,329 @@
+/*color*/
+$primary-color:#0275D8;
+$primary2-color:#000;
+$secondary-color:#BEE1FF;
+$secondary2-color:#FFFFFF;
+$danger-color:#F5A623;
+$third-color:#9B9B9B;
+$forth-color:#999999;
+
+/*font*/
+$title:48px;
+$subtitle:24px;
+$form:20px;
+$lable:14px;
+
+
+
+html,body{
+    font-family: 'Open Sans', sans-serif;}
+.relative{
+    position: relative;
+}
+ul li{list-style: none;}
+.header_line{
+    width: 456px;
+    height: 3px;
+    margin: 0 auto;
+    background: $primary-color;
+}    
+.container{
+    max-width: 460px;
+    width: 100%;
+    h2{
+        font-size: $title;
+    }
+    h4{
+        font-size: $subtitle;
+    }
+}
+
+.progress {
+    margin: 64px auto;
+    width: 234px;
+    height: auto;
+    background: #FFFFFF;
+    border: 2px solid #BEE1FF;
+  }
+  
+  .progress>div {
+    width: 16px;
+    height: 16px;
+    background: #FFFFFF;
+    border: 2px solid #BEE1FF;
+    border-radius: 16px;
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -8px;
+  }
+  
+  .progress>div:nth-child(2) {
+    margin-left: 70px;
+  }
+  
+  .progress>div:nth-child(3) {
+    margin-left: 148px;
+  }
+  
+  .progress>div:nth-child(4) {
+    margin-left: 226px;
+  }
+  
+  .progress>.in {
+    border: 2px solid $primary-color;
+  }
+  
+  .progress>.in:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: $primary-color;
+    display: block;
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-left: 2px;
+  }
+  
+  .progress>.in:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 65px;
+    background: #FFFFFF;
+    border: 2px solid $primary-color;
+    margin-top: 4px;
+    margin-left: -65px
+  }
+  
+  .progress>.in:first-child:before {
+    display: none;
+  }
+  
+  .progress>.in.done:after {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    content: "\f00c";
+    width: 16px;
+    height: 16px;
+    margin: -2px;
+    color: white;
+    text-align: center;
+  }
+
+.account_form{
+    font-size: $form;
+    .form-control{
+        border:2px solid $primary2-color;
+        border-radius: 8px;
+    }
+
+}
+.process{
+ li{
+     list-style: none;
+ }
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.img_upload{
+    display: block;
+    padding: 46px;
+    border:2px solid $primary2-color;
+    border-radius: 8px;
+    color:$third-color;
+}
+
+.label_blank{
+    margin-bottom:30px;
+}
+
+
+.smile{
+    font-size: 230px;
+    color: $secondary-color;
+}
+.smile_text{
+    color: $primary-color;
+    font-size:$form ;
+    font-style: italic;
+}
+
+/*form invalid*/
+
+// .tooltip_style {
+//     white-space:nowrap;
+//     top: 50%;
+//     left: 101%;
+//     background-color: $danger-color;
+// }
+// .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
+//     border-color: $danger-color;
+// }
+// .custom-select.is-invalid:focus, .form-control.is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .form-control:invalid:focus {
+//     border-color: $danger-color;
+//     box-shadow: 0 0 0 0.2rem rgba(245,166,35,.25);
+// }
+// .tooltip_style::after {
+//     content: "";
+//     position: absolute;
+//     top: 40%;
+//     left: 0%;
+//     margin-left: -10px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color:  transparent $danger-color transparent transparent;
+// }
+
+
+.form-control {
+    color: $forth-color;
+}
+
+.warning{
+    padding: 14px 40px;
+    background-color: $danger-color;
+    color:$secondary2-color;
+    border: 2px solid $secondary2-color;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+
+
+
+.tooltip {
+    margin-left: 10px;
+  }
+  
+  .tooltip .arrow:before {
+    border-right-color: $danger-color;
+    border-left-color: $danger-color;
+  }
+  
+  .tooltip-inner {
+    background: $danger-color;
+  }
+
+.form-control.warn {
+    border-color: $danger-color;
+    border-width: 2px;
+  }
+  
+  .form-control.warn:after {
+    content: attr(value);
+  }
+  
+  .form-control~i {
+    display: none;
+    position: absolute;  
+    bottom: 12px;
+    right: 10px;  
+  }
+  
+  .form-control.warn~i {
+    display: block;
+    color: $danger-color;
+  }
+
+  .btn-block.form-control{
+    background-color: $primary-color;
+    border:0;
+    color:$secondary2-color;
+}
+  
+  .btn-block.form-control.warn {
+    border-color: $secondary-color;
+    opacity: 0.5;
+  }
+  
+  .btn-warning.warn {
+    color: white;
+    background: $danger-color;
+  }
+  .msg[value=''] {
+    display:none;
+  }
+
+
+  .img {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .img img {
+    width: 100%;
+    border-radius: 8px;
+    display: none;
+  }
+  
+  .img img[src] {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .img:hover:after {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    content: '\f2ed';
+    height: 52px;
+    background: #0275D8;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 52px;
+  }
+  
+  .upload {
+    margin-top: 16px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    width: 460px;
+    height: 140px;
+  }
+  
+  .upload>i {
+    width: 58px;
+    height: 45px;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 48px;
+    margin-left: 69px;
+  }
+  
+  .upload>div {
+    width: 235px;
+    height: 48px;
+    margin-top: 48px;
+    margin-left: 20px;
+    display: inline-block;
+  }
+  
+  .upload+input {
+    width: 460px;
+    height: 140px;
+    position: absolute;
+    top: 16px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .list {
+    align-items: flex-end;
+  }
+  .visa,
+.master {
+  display: none;
+  font-size: 30px;
+  bottom: 4px !important;
+}
