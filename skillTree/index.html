@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400,600,600i,700,700i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+
+  <title>Document</title>
+</head>
+
+
+<body>
+  <div class="wrap" id="app">
+    <div class="title">
+      <h1>FRONT-END SKILL TREE</h1>
+      <h4>CURRENT RANK</h4>
+
+      <h2 v-if="levelText==0">FRONT-END NOOB</h2>
+      <h2 v-if="levelText==1">FRONT-END Beginnner</h2>
+      <h2 v-if="levelText==2">FRONT-END Developer</h2>
+      <h2 v-if="levelText==3">FRONT-END Master</h2>
+      <div class="ship">
+        <img :src="nowImg" alt="">
+      </div>
+
+        <p v-if="levelText==0" class='dialog'>Welcome to aboard. Your mission is: <span>Collect the resources and learn the skills to upgrade the ship.</span> Good luck, captain!</p>
+        <p v-if="levelText==1" class='dialog'><strong>Congradulations! </strong>You become the <span>Front-end Beginnner”.</span>“ Keep searching the resources to upgrade to the next level.</p>
+        <p v-if="levelText==2" class='dialog'><strong>You’re doing well!</strong> Now you’re a <span>“Front-end Developer”.</span> It’s close to complete the upgrading program. <br>Next level: Front-end Master.</p>
+        <p v-if="levelText==3" class='dialog'><strong>Excellent!</strong> You’re a <span>“Front-end Master”</span> now. But a new galary was just detected by the system. Captain, make your choice.</p>
+    </div>
+    <div class="category_img">
+      <div class="icon01 img Incategory" @click.once="addItem('Basics')">
+        <img src="images/img-planet-basics.png" alt="">
+        <div class="arrow_to">
+          <div class="arrow_box"></div>
+          <div class="arrow_triangle"></div>
+        </div>
+      </div>
+      <div class="icon02 img" :class="{Incategory:isCategory('CSS')}">
+        <img src="images/img-planet-css.png" alt="">
+        <div class="arrow_to">
+          <div class="arrow_box2"></div>
+          <div class="arrow_triangle2"></div>
+        </div>
+      </div>
+      <div class="icon03 img" :class="{Incategory:isCategory('Javascript')}">
+        <img src="images/img-planet-js.png" alt="">
+        <div class="arrow_to">
+          <div class="arrow_box3"></div>
+          <div class="arrow_triangle3"></div>
+        </div>
+      </div>
+      <div class="icon04 img" :class="{Incategory:isCategory('Managers')}">
+        <img src="images/img-planet-managers.png" alt="">
+      </div>
+    </div>
+    <div class="tree">
+
+      <div class="tree_block">
+        <div class="tree_block_item"  v-for="(item,index) in basicLists" :class="{canClick: isCategory('Basics'), mrAuto:item.ismrAuto ,isDone: item.isDone ,isActive: myItem.id == item.id}"  @click="showDetail(basicLists[index])">
+          <div class="block">
+            <div class="finish"></div>
+            <i class="material-icons">{{item.itemImg}}</i>
+          </div>
+          <div class="block_dec">
+            <div class="dec_icon01">
+              <i class="material-icons">settings</i>
+              <span class="recommend_num">{{checkedLength(item.recommend)}}/{{item.recommend && item.recommend.length}}</span>
+            </div>
+            <div class="dec_icon02">
+              <i class="material-icons">filter_tilt_shift</i>
+              <span class="option_num">{{checkedLength(item.optional)}}/{{item.optional && item.optional.length}}</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="tree_block">
+        <div class="tree_block_item" v-for="(item,index) in cssLists" :class="{canClick: isCategory('CSS'), mrAuto:item.ismrAuto ,isDone: item.isDone ,isActive: myItem.id==item.id}"  @click="showDetail(cssLists[index])">
+          <div class="block">
+            <div class="finish"></div>
+            <i class="material-icons">{{item.itemImg}}</i>
+          </div>
+          <div class="block_dec">
+            <div class="dec_icon01">
+              <i class="material-icons">settings</i>
+              <span class="recommend_num">{{checkedLength(item.recommend)}}/{{item.recommend && item.recommend.length}}</span>
+            </div>
+            <div class="dec_icon02">
+              <i class="material-icons">filter_tilt_shift</i>
+              <span class="option_num">{{checkedLength(item.optional)}}/{{item.optional && item.optional.length}}</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="tree_block">
+        <div class="tree_block_item" v-for="(item,index) in jsLists" :class="{canClick: isCategory('Javascript'), mrAuto:item.ismrAuto ,isDone: item.isDone ,isActive: myItem.id==item.id}"  @click="showDetail(jsLists[index])">
+          <div class="block">
+            <div class="finish"></div>
+            <i class="material-icons">{{item.itemImg}}</i>
+          </div>
+          <div class="block_dec">
+            <div class="dec_icon01">
+              <i class="material-icons">settings</i>
+              <span class="recommend_num">{{checkedLength(item.recommend)}}/{{item.recommend && item.recommend.length}}</span>
+            </div>
+            <div class="dec_icon02">
+              <i class="material-icons">filter_tilt_shift</i>
+              <span class="option_num">{{checkedLength(item.optional)}}/{{item.optional && item.optional.length}}</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="tree_block">
+        <div class="tree_block_item" v-for="(item,index) in managerLists" :class="{canClick: isCategory('Managers'), mrAuto:item.ismrAuto ,isDone: item.isDone ,isActive: myItem.id==item.id}"  @click="showDetail(managerLists[index])">
+          <div class="block">
+            <div class="finish"></div>
+            <i class="material-icons">{{item.itemImg}}</i>
+          </div>
+          <div class="block_dec">
+            <div class="dec_icon01">
+              <i class="material-icons">settings</i>
+              <span class="recommend_num">{{checkedLength(item.recommend)}}/{{item.recommend && item.recommend.length}}</span>
+            </div>
+            <div class="dec_icon02">
+              <i class="material-icons">filter_tilt_shift</i>
+              <span class="option_num">{{checkedLength(item.optional)}}/{{item.optional && item.optional.length}}</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="dec">
+      <div class="select_icon_big">
+        <i class="material-icons">{{myItem.itemImg}}</i>
+        <div class="h2">{{myItem.title}}</div>
+      </div>
+      <div class="select_category">
+        <div class="reconmend" v-if="myItem.recommend && myItem.recommend.length > 0">
+          <div class="icon_R">
+            <i class="material-icons">settings</i>
+            <div class="icon_text_s">RECOMMENDED</div>
+          </div>
+          <button class="btn" v-for="(item,index) in myItem.recommend" :class="{isActive:item.checked}" @click.stop="checkItem(myItem.id, index, 'recommend')">{{item.title}}</button>
+
+        </div>
+
+        <div class="optional" v-if="myItem.optional && myItem.optional.length > 0">
+          <div class="icon_O">
+            <i class="material-icons">filter_tilt_shift</i>
+            <div class="icon_text_s">OPTIONAL</div>
+          </div>
+          <button class="btn"  v-for="(item,index) in myItem.optional" :class="{isActive:item.checked}" @click.stop="checkItem(myItem.id, index, 'optional')">{{item.title}}</button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="js/all.js"></script>
+</body>
+
+</html>
